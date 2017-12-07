@@ -32,8 +32,6 @@ public class MenuViewModel extends ViewModel {
 
     int mIndext = -1;
 
-
-
     public Command getCommand() {
         return new Command();
     }

@@ -20,6 +20,7 @@ import com.mitime.databinding.FragmentCommBinding;
 public class CommFragment extends BaseFragment {
 
     FragmentCommBinding mBinding ;
+
     public static CommFragment newInstance(String title){
         CommFragment fragment = new CommFragment();
         Bundle args = new Bundle();

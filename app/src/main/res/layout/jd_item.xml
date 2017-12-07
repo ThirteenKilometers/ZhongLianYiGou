@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:layout_width="154px"
         android:layout_height="154px"
-        android:background="@color/colorAccent"/>
+        />
     <TextView
         android:id="@+id/tv_jd_item"
         android:textSize="31px"

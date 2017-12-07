@@ -480,7 +480,7 @@ public class VerticalViewPager extends ViewGroup {
 
     /**
      * Set a listener that will be invoked whenever the page changes or is incrementally
-     * scrolled. See {@link ViewPager.OnPageChangeListener}.
+     * scrolled. See {@link android.support.v4.view.ViewPager.OnPageChangeListener}.
      *
      * @param listener Listener to set
      */
@@ -489,7 +489,7 @@ public class VerticalViewPager extends ViewGroup {
     }
 
     /**
-     * Set a {@link ViewPager.PageTransformer} that will be called for each attached page whenever
+     * Set a {@link android.support.v4.view.ViewPager.PageTransformer} that will be called for each attached page whenever
      * the scroll position is changed. This allows the application to apply custom property
      * transformations to each page, overriding the default sliding look and feel.
      * <p/>
@@ -1129,7 +1129,7 @@ public class VerticalViewPager extends ViewGroup {
                     + " position=" + position + "}";
         }
 
-        public static final Creator<SavedState> CREATOR
+        public static final Parcelable.Creator<SavedState> CREATOR
                 = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
             @Override
             public SavedState createFromParcel(Parcel in, ClassLoader loader) {
@@ -2742,7 +2742,7 @@ public class VerticalViewPager extends ViewGroup {
         /**
          * Gravity setting for use on decor views only:
          * Where to position the view page within the overall ViewPager
-         * container; constants are defined in {@link Gravity}.
+         * container; constants are defined in {@link android.view.Gravity}.
          */
         public int gravity;
 

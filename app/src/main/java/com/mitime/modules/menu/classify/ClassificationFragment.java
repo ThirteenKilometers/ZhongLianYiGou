@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.util.TypedValue;
@@ -82,11 +83,10 @@ public class ClassificationFragment extends BaseFragment {
             }
         });
         verticalViewPager.setAdapter(new ClassificationAdapter(getFragmentManager()));
-      /*  verticalViewPager.setPageMargin(getResources().
-                getDimensionPixelSize(16));*/
+        verticalViewPager.setPageMargin(getResources().
+                getDimensionPixelSize(R.dimen.fab_margin));
         return view;
     }
-
     public class ClassificationAdapter extends FragmentPagerAdapter {
         List<SameCategoryFragment> fragments = new ArrayList<>();
 
@@ -133,7 +133,7 @@ public class ClassificationFragment extends BaseFragment {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class SameCategoryFragment extends BaseFragment{
+    public static class SameCategoryFragment extends Fragment {
         private  ArrayList<String> itemList=null;//图文混排中的文字
         private LinearLayout.LayoutParams content_gradeview = null;
         private LinearLayout.LayoutParams title_tv = null;
@@ -212,7 +212,7 @@ public class ClassificationFragment extends BaseFragment {
             }
 
             //高度60dp+行距8dp = 68dp
-            int heightUnit = (int) TypedValue
+            int heightUnit = (int)TypedValue
                     .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 68, getResources().getDisplayMetrics());
             int height;
 
@@ -260,7 +260,7 @@ public class ClassificationFragment extends BaseFragment {
             gridView.setVerticalSpacing(8);
             gridView.setLayoutParams(content_gradeview);
 
-            adapter=new GDAdapter(getActivity(),itemList,R.mipmap.ic_empty);
+            adapter=new GDAdapter(getActivity(),itemList,R.mipmap.ic_launcher);
             gridView.setAdapter(adapter);
             llayout_main.addView(gridView);
         }
@@ -268,7 +268,7 @@ public class ClassificationFragment extends BaseFragment {
     /**
      * 右侧Adaptert
      */
-    static  class  GDAdapter extends BaseAdapter {
+    static  class  GDAdapter extends BaseAdapter{
         private Context context;
         private List<String> results;
         private int imageId;
@@ -368,4 +368,6 @@ public class ClassificationFragment extends BaseFragment {
             return  view;
         }*/
     }
+
+
 }

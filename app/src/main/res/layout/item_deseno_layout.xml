@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="10px">
+
+    <View
+        style="@style/PartingLineView"
+        android:layout_height="14px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24px"
+            android:layout_marginTop="22px"
+            android:layout_weight="272"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/ImageViewStyle"
+                    android:src="@mipmap/xianshi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9px"
+                    android:text="@string/string_time_limit"
+                    android:textColor="@color/color_text01"
+                    android:textSize="32px"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle_TimeLimit"
+                    android:text="00" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_marginLeft="3px"
+                    android:layout_marginRight="3px"
+                    android:background="@null"
+                    android:text=":"
+                    android:textColor="@color/color_333"
+                    android:textSize="16px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextViewStyle_TimeLimit"
+                    android:text="00" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_marginLeft="3px"
+                    android:layout_marginRight="3px"
+                    android:background="@null"
+                    android:text=":"
+                    android:textColor="@color/color_333"
+                    android:textSize="16px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextViewStyle_TimeLimit"
+                    android:text="00" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextViewStyle_TimeLimit_Text"
+                android:layout_marginRight="12px"
+                android:text="良品铺子法兰蒂草莓干" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle_Hint"
+                    android:text="限时秒杀价:" />
+
+                <TextView
+                    style="@style/TextViewStyle_Hint"
+                    android:text="￥:8.8"
+                    android:textColor="@color/color_text03"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                style="@style/ImageViewStyle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16px"
+                android:background="@android:color/white"
+                android:src="@mipmap/zwtu_xqdt" />
+        </LinearLayout>
+
+        <View
+            style="@style/PartingLineView"
+            android:layout_width="2px"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:paddingTop="20px"
+            android:layout_marginRight="17px"
+            android:layout_height="wrap_content"
+            android:layout_weight="476"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/ImageViewStyle"
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/baokuan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9px"
+                            android:text="@string/string_recommend"
+                            android:textColor="@color/color_text05"
+                            android:textSize="32px"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextViewStyle_TimeLimit_Text"
+                        android:layout_marginRight="12px"
+                        android:text="新疆红枣夹核桃仁" />
+
+
+                    <TextView
+                        style="@style/TextViewStyle_Hint"
+                        android:text="已售51848件" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10px">
+
+                        <TextView
+                            style="@style/TextViewStyle_Hint"
+                            android:layout_marginTop="0dp"
+                            android:text="￥29.8"
+                            android:textColor="@color/color_text03"
+                            android:textStyle="bold" />
+                        <TextView
+                            style="@style/TextViewStyle"
+                            android:layout_marginLeft="15px"
+                            android:textSize="16px"
+
+                            android:text="￥9.9"
+
+                            android:textColor="@color/color_999"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5px"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        style="@style/ImageViewStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/white"
+                        android:layout_weight="1"
+                        android:src="@mipmap/zwtu_xqdt" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View style="@style/PartingLineView" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="10px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/ImageViewStyle"
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/xinpin" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9px"
+                            android:text="@string/string_new"
+                            android:textColor="@color/color_text04"
+                            android:textSize="32px"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TextViewStyle_TimeLimit_Text"
+                        android:layout_marginRight="12px"
+                        android:text="新鲜水果罐头黄桃子" />
+
+
+                    <TextView
+                        style="@style/TextViewStyle_Hint"
+                        android:text="新品抢先购" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10px">
+
+                        <TextView
+                            style="@style/TextViewStyle_Hint"
+                            android:layout_marginTop="0dp"
+                            android:text="￥49.8"
+                            android:textColor="@color/color_text03"
+                            android:textStyle="bold" />
+                        <TextView
+                            style="@style/TextViewStyle"
+                            android:layout_marginLeft="15px"
+                            android:textSize="16px"
+
+                            android:text="￥158.0"
+
+                            android:textColor="@color/color_999"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        style="@style/ImageViewStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:src="@mipmap/zwtu_xqdt" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

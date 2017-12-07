@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="Command"
+            type="com.mitime.modules.menu.main.MainViewModel.Command" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:background="@color/colorAccent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:onClick="@{Command::onClickRichScan}"
+                android:orientation="vertical"
+                android:paddingLeft="42px"
+                android:paddingRight="43px">
+
+                <ImageView
+                    style="@style/ImageViewStyle"
+                    android:src="@mipmap/saoyisao" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_marginTop="7px"
+                    android:text="@string/string_rich_scan"
+                    android:textColor="@android:color/white"
+                    android:textSize="16px" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="14px"
+                android:layout_marginTop="14px"
+                android:layout_weight="1"
+                android:background="@drawable/draw_main_search"
+                android:onClick="@{Command::onClickSearch}"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/mAnchorImage"
+                    style="@style/ImageViewStyle"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25px"
+                    android:layout_marginRight="10px"
+                    android:src="@mipmap/sousuo" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="7px"
+                    android:layout_toRightOf="@id/mAnchorImage"
+                    android:text="@string/string_search_hint"
+                    android:textColor="@android:color/white"
+                    android:textSize="24px" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:onClick="@{Command::onClickMessage}"
+                android:orientation="vertical"
+                android:paddingLeft="42px"
+                android:paddingRight="43px">
+
+                <RelativeLayout
+                    android:layout_width="48px"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/ImageViewStyle"
+                        android:src="@mipmap/xiaoxi" />
+
+                    <ImageView
+                        android:id="@+id/mImageShowMsg"
+                        android:layout_width="18px"
+                        android:layout_height="18px"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/draw_show_msg01"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_marginTop="7px"
+                    android:text="@string/string_message"
+                    android:textColor="@android:color/white"
+                    android:textSize="16px" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

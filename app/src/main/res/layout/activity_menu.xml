@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="Command"
+            type="com.mitime.mvvm.menu.MenuViewModel.Command" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWindowBackground"
+        android:orientation="vertical">
+
+        <com.library.widgets.views.viewpager.ViewPagerFixed
+            android:id="@+id/mViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <include
+            android:id="@+id/mInclude"
+            layout="@layout/include_main_bottom_navigation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            bind:Command="@{Command}" />
+
+
+    </LinearLayout>
+</layout>

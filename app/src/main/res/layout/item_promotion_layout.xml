@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5px"
+    android:paddingBottom="10px"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+            android:id="@+id/mViewSeckill"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/ImageViewStyle"
+            android:src="@mipmap/miaosha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4px"
+            android:text="一元秒杀"
+            android:textColor="@color/color_999"
+            android:textSize="20px" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mViewExchange"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/ImageViewStyle"
+            android:src="@mipmap/duihuan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4px"
+            android:text="免费兑换"
+            android:textColor="@color/color_999"
+            android:textSize="20px" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mViewRedPacket"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/ImageViewStyle"
+            android:src="@mipmap/hongbao" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4px"
+            android:text="红包专区"
+            android:textColor="@color/color_999"
+            android:textSize="20px" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mViewMore"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/ImageViewStyle"
+            android:src="@mipmap/gengduo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4px"
+            android:text="更多活动"
+            android:textColor="@color/color_999"
+            android:textSize="20px" />
+
+    </LinearLayout>
+</LinearLayout>

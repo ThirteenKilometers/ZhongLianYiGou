@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/qidongye">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="250px"
+        android:visibility="gone"
+        android:layout_marginRight="30px"
+        android:background="@drawable/draw_start_count_down"
+        android:paddingBottom="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        android:paddingTop="10px"
+        android:textColor="@color/colorWindowBackground"
+        tools:text="3秒跳过" />
+
+</RelativeLayout>

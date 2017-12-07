@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    app:ignore="NamespaceTypo">
+
+    <data>
+
+        <variable
+            name="Command"
+            type="com.mitime.modules.menu.main.MainViewModel.Command" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWindowBackground"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/mInclude"
+            layout="@layout/include_main_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            bind:Command="@{Command}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/mTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="88px"
+                app:tabIndicatorHeight="4dp"
+                app:tabTextAppearance="@style/CustomTabTextAppearance" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

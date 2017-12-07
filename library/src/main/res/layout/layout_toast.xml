@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@drawable/toast_bg"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+
+
+        <TextView
+            android:id="@+id/mTextShowMSG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="这是一个Toast"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>

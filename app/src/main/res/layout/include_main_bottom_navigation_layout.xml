@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+        <variable
+            name="Command"
+            type="com.mitime.mvvm.menu.MenuViewModel.Command" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <View style="@style/PartingLineView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->Command.onClick(view,0)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mImageMain"
+                    style="@style/ImageViewStyle"
+                    android:layout_width="44px"
+                    android:layout_height="40px"
+                    android:src="@mipmap/shangjia_xzh" />
+
+                <TextView
+                    android:id="@+id/mTextMain"
+                    style="@style/TextViewStyle_MainBottom"
+                    android:text="@string/string_main"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->Command.onClick(view,1)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mImageClassify"
+                    style="@style/ImageViewStyle_MainBottom"
+                    android:layout_width="44px"
+                    android:layout_height="40px"
+                    android:src="@mipmap/feilei_wxzh" />
+
+                <TextView
+                    android:id="@+id/mTextClassify"
+                    style="@style/TextViewStyle_MainBottom"
+                    android:text="@string/string_classify" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->Command.onClick(view,2)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mImageMerchant"
+                    style="@style/ImageViewStyle_MainBottom"
+                    android:src="@mipmap/shangjia_wxzh" />
+
+                <TextView
+                    android:id="@+id/mTextMerchant"
+                    style="@style/TextViewStyle_MainBottom"
+                    android:text="@string/string_merchant" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->Command.onClick(view,3)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mImageShoppingCart"
+                    style="@style/ImageViewStyle_MainBottom"
+                    android:src="@mipmap/gouwuche_wxzh" />
+
+                <TextView
+                    android:id="@+id/mTextShoppingCart"
+                    style="@style/TextViewStyle_MainBottom"
+                    android:text="@string/string_shopping_cart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(view)->Command.onClick(view,4)}"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="44px"
+                    android:layout_height="50px">
+
+                    <ImageView
+                        android:id="@+id/mImageMe"
+                        android:layout_centerInParent="true"
+                        style="@style/ImageViewStyle_MainBottom"
+                        android:src="@mipmap/my_wxzh" />
+
+                    <ImageView
+                        android:id="@+id/mImageShowMsg"
+                        android:layout_marginRight="2px"
+                        style="@style/ImageViewStyle_MainBottom"
+                        android:layout_width="18px"
+                        android:visibility="gone"
+                        android:layout_height="18px"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/draw_show_msg" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/mTexteMe"
+                    style="@style/TextViewStyle_MainBottom"
+                    android:text="@string/string_me" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

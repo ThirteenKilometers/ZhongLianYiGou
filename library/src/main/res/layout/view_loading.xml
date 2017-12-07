@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+     <ProgressBar
+         android:id="@id/MultipleStatusView_Loading_Progress"
+         android:layout_width="55dp"
+         android:layout_height="55dp" />
+    <TextView
+        android:id="@id/MultipleStatusView_Loading_TextView"
+        style="@style/MultipleStatusView.TextView"
+        android:layout_marginTop="10dp"
+        android:textSize="13sp"
+        android:text="加载中..." />
+
+</LinearLayout>

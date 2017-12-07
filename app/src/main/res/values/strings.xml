@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">众联易购</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="string_rich_scan">扫一扫</string>
+    <string name="string_search_hint">大家都在搜：手机</string>
+    <string name="string_message">消息</string>
+    <string name="string_main">首页</string>
+    <string name="string_classify">分类</string>
+    <string name="string_merchant">商家</string>
+    <string name="string_shopping_cart">购物车</string>
+    <string name="string_me">我的</string>
+    <string name="string_time_limit">限时秒杀</string>
+    <string name="string_recommend">爆款推荐</string>
+    <string name="string_new">新品预售</string>
+</resources>

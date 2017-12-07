@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70px"
+        android:background="@mipmap/tuijian_jp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25px"
+        android:layout_marginRight="25px"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@mipmap/zwtu_xqdt" />
+
+
+        <TextView
+            style="@style/TextViewStyle_Info_Title"
+            android:layout_marginTop="10px"
+            android:text="【优质柔软包芯纱 亲肤不起球 6色4码 显高显瘦】 宽松半高领长袖针织衫2017新款秋冬韩版百搭春秋装说都发送到" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="19px"
+            android:layout_marginTop="29px"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle_Hint"
+                    android:layout_marginTop="0dp"
+                    android:text="￥88+100红包"
+                    android:textColor="@color/color_text03"
+                    android:textSize="32px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_marginLeft="28px"
+                    android:text="￥158.0"
+                    android:textColor="@color/color_999"
+                    android:textSize="24px"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView style="@style/TextViewStyle_Purchse"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+        <View style="@style/PartingLineView"
+            android:layout_height="14px"/>
+
+</LinearLayout>

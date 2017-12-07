@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--该应用入口页面-->
+        <!--该应用入口页面 -->
         <activity android:name=".modules.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

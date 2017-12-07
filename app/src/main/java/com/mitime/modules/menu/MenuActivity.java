@@ -25,10 +25,6 @@ import java.util.List;
  * 作者：LZHS<br/>
  * 时间： 2017/11/27 16:11<br/>
  * 邮箱：1050629507@qq.com
- *
- *
- *
- *
  */
 public class MenuActivity extends BaseActivity <MenuViewModel>{
     ActivityMenuBinding mBinding;

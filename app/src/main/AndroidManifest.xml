@@ -18,6 +18,7 @@
             <!--</intent-filter>-->
         </activity>
 
+        
         <!-- 该应用入口页面 -->
         <activity android:name=".modules.StartActivity">
             <intent-filter>

@@ -41,7 +41,6 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
         mModel.getDatas().subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {
-
                 mBinding.mMultipleStatusView.showContent();
                 MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
                 mAdapter.addItemViewDelegate(new BannerItemView());

@@ -16,10 +16,7 @@ import io.reactivex.schedulers.Schedulers;
  * 时间： 2017/12/4 21:37<br/>
  * 邮箱：1050629507@qq.com
  */
-class HomePageModel extends Model {
-
-
-
+public class HomePageModel extends Model {
     protected HomePageModel(Context mContext) {
         super(mContext);
     }

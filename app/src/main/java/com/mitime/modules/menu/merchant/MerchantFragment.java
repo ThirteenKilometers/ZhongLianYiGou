@@ -2,8 +2,8 @@ package com.mitime.modules.menu.merchant;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,17 +11,20 @@ import android.view.ViewGroup;
 
 import com.library.widgets.ui_base.BaseFragment;
 import com.mitime.R;
+import com.mitime.mvvm.beans.HomePageBeans;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
-;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+;
 
 /**
  * 商家Fragment
@@ -29,14 +32,12 @@ import butterknife.Unbinder;
 public class MerchantFragment extends BaseFragment {
 
 
-    @BindView(R.id.MerchantsClassification)
-    RecyclerView MerchantsClassification;//商家分类
-    @BindView(R.id.MerchantsRecommend)
-    RecyclerView MerchantsRecommend;//推荐商家
     Unbinder unbinder;
-    CommonAdapter adapter=null;
-   // MultiItemTypeAdapter
-    List<Integer>data=new ArrayList<Integer>();
+    MultiItemTypeAdapter adapter = null;
+    // MultiItemTypeAdapter
+    //List<Integer> data = new ArrayList<Integer>();
+    @BindView(R.id.mRecycleMerchant)
+    RecyclerView mRecycleMerchant;
 
     public MerchantFragment() {
         // Required empty public constructor
@@ -49,35 +50,33 @@ public class MerchantFragment extends BaseFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_merchant, container, false);
         unbinder = ButterKnife.bind(this, view);
-        initView();
+        //initView();
         return view;
     }
 
     private void initView() {
-        MerchantsClassification.setLayoutManager(new GridLayoutManager(getContext(),4));
-        for (int i = 0; i < 8; i++) {
+       // mRecycleMerchant.setLayoutManager(new GridLayoutManager(getContext(), 4));
+       /* for (int i = 0; i < 8; i++) {
             data.add(i);
-        }
-        adapter= new CommonAdapter<Integer>(getContext(), R.layout.classification_item, data) {
-            
+        }*/
+        adapter = new MultiItemTypeAdapter(getContext(),getDatas());
+        adapter.addItemViewDelegate(new MerchantsClassificationActivity());
+        adapter.addItemViewDelegate(new MerchantsRecommendActivity());
 
-            @Override
-            protected void convert(ViewHolder holder, Integer integer, int position) {
-
-
-            }
-        } ;
-        
-        /*//classification_item
-        adapter=new CommonAdapter<Integer>(getContext(), R.layout.recommend_item,data) {
-
-            @Override
-            protected void convert(ViewHolder holder, Integer integer, int position) {
-
-            }
-        };*/
-        MerchantsClassification.setAdapter(adapter);
+        mRecycleMerchant.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecycleMerchant.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    List<HomePageBeans> getDatas() {
+        List<HomePageBeans> mDatas = new ArrayList<>();
+        mDatas.add(new HomePageBeans<Object>(0,null));
+        mDatas.add(new HomePageBeans<Object>(1, new Object()));
+        mDatas.add(new HomePageBeans<Object>(1, new Object()));
+        mDatas.add(new HomePageBeans<Object>(1, new Object()));
+        mDatas.add(new HomePageBeans<Object>(1, new Object()));
+        mDatas.add(new HomePageBeans<Object>(1, new Object()));
+        return mDatas;
     }
 
     @Override

@@ -4,26 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.mitime.modules.menu.merchant.MerchantFragment">
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/MerchantsClassification"
-        android:layout_width="match_parent"
-        android:layout_height="390px">
-    </android.support.v7.widget.RecyclerView>
-    <TextView
-        android:layout_marginBottom="20px"
-        android:layout_marginTop="20px"
-        android:text="-推荐商家-"
-        android:textColor="@color/colorAccent"
-        android:gravity="center"
-        android:textSize="31px"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/MerchantsRecommend"
+        android:id="@+id/mRecycleMerchant"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
+   
+
 </com.zhy.autolayout.AutoLinearLayout>

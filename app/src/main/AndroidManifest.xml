@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--该应用测试页面-->
-        <activity android:name=".test.TestActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+        <!-- 该应用测试页面 -->
+        <activity android:name=".test.TestActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
 
-        
         <!-- 该应用入口页面 -->
         <activity android:name=".modules.StartActivity">
             <intent-filter>
@@ -31,6 +33,7 @@
         <activity
             android:name=".modules.menu.MenuActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".modules.menu.merchant.MerchantsClassificationActivity"></activity>
     </application>
 
 </manifest>

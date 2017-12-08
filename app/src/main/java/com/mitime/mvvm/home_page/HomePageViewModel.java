@@ -15,8 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import io.reactivex.functions.Consumer;
-
 /**
  * <br/>
  * 作者：LZHS<br/>
@@ -25,6 +23,7 @@ import io.reactivex.functions.Consumer;
  */
 public class HomePageViewModel extends ViewModel<HomePageModel> {
     FragmentHomePageBinding mBinding;
+    BannerItemView mBannerItemView = new BannerItemView();
 
     @Override
     public HomePageModel createModel() {
@@ -38,29 +37,29 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
     @Override
     public void onCreateView() {
         mBinding.mMultipleStatusView.showLoading();
-        mModel.getDatas().subscribe(new Consumer<Long>() {
-            @Override
-            public void accept(Long aLong) throws Exception {
+        mModel.getDatas().subscribe(aLong -> {
 
-                mBinding.mMultipleStatusView.showContent();
-                MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
-                mAdapter.addItemViewDelegate(new BannerItemView());
-                mAdapter.addItemViewDelegate(new PromotionItemView());
-                mAdapter.addItemViewDelegate(new DesenoItemView());
-                mAdapter.addItemViewDelegate(new RecommendItemView());
-                mBinding.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-                mBinding.mRecyclerView.setAdapter(mAdapter);
-            }
+            mBinding.mMultipleStatusView.showContent();
+            MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
+            mAdapter.addItemViewDelegate(mBannerItemView);
+            mAdapter.addItemViewDelegate(new PromotionItemView());
+            mAdapter.addItemViewDelegate(new DesenoItemView());
+            mAdapter.addItemViewDelegate(new RecommendItemView());
+            mBinding.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+            mBinding.mRecyclerView.setAdapter(mAdapter);
         });
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mBannerItemView != null) mBannerItemView.onPause();
 
     }
 
-
-
     List<HomePageBeans> getDatas() {
         List<HomePageBeans> mDatas = new ArrayList<>();
-        mDatas.add(new HomePageBeans<String[]>(0,null));
+        mDatas.add(new HomePageBeans<String[]>(0, null));
         mDatas.add(new HomePageBeans<HashMap<String, Object>>(1, new HashMap<>()));
         mDatas.add(new HomePageBeans<Object>(2, new Object()));
         mDatas.add(new HomePageBeans<Object>(3, new Object()));
@@ -71,9 +70,9 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
     }
 
 
-    public  enum  ViewType{
+    public enum ViewType {
         /**
-         *  Banner 专区样式
+         * Banner 专区样式
          */
         Banner(0),
         /**
@@ -88,7 +87,7 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
          * 精品推荐专区样式
          */
         Recommend(3);
-        private  int type;
+        private int type;
 
         ViewType(int type) {
             this.type = type;
@@ -102,8 +101,6 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
             this.type = type;
         }
     }
-
-
 
 
 }

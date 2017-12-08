@@ -7,25 +7,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.library.utils.ToastUtil;
 import com.library.widgets.views.banner.BannerView;
-import com.library.widgets.views.banner.BannerViewHolder;
+import com.library.widgets.views.banner.holders.ViewHolder;
 import com.mitime.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestActivity extends AppCompatActivity {
 
     BannerView mBannerView;
 
-    public static final int []BANNER = new int[]{R.mipmap.banner1,R.mipmap.banner2,R.mipmap.banner3,R.mipmap.banner4,R.mipmap.banner5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-
+        List<Integer> banners = new ArrayList<>();
+        banners.add(R.mipmap.banner1);
+        banners.add(R.mipmap.banner2);
+        banners.add(R.mipmap.banner3);
+        banners.add(R.mipmap.banner4);
+        banners.add(R.mipmap.banner5);
         mBannerView = findViewById(R.id.mBannerView);
-
-
-
+        mBannerView.setPages(banners, () -> new BannerViewHolders());
+        mBannerView.setBannerPageClickListener((view, position) -> ToastUtil.INSTANCE.show(this, "你单击了第 " + position + "张Banner"));
 
     }
 
@@ -42,17 +49,19 @@ public class TestActivity extends AppCompatActivity {
     }
 
 
-    public static class BannerViewHolders implements BannerViewHolder<Integer> {
+    public static class BannerViewHolders implements ViewHolder<Integer> {
         private ImageView mImageView;
+
         @Override
         public View createView(Context mContext) {
             View mRoot = LayoutInflater.from(mContext).inflate(R.layout.banner_item01, null);
-            return null;
+            mImageView = mRoot.findViewById(R.id.mImageView);
+            return mRoot;
         }
 
         @Override
         public void onBind(Context mContext, int position, Integer data) {
-
+            mImageView.setImageResource(data);
         }
     }
 }

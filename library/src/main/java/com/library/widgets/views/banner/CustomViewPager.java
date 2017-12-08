@@ -20,7 +20,8 @@ public class CustomViewPager extends ViewPager {
     private SparseArray<Integer> childIndex = new SparseArray<>();
 
     public CustomViewPager(Context context) {
-        this(context, null);
+        super(context);
+        init();
     }
 
     public CustomViewPager(Context context, AttributeSet attrs) {
@@ -28,33 +29,41 @@ public class CustomViewPager extends ViewPager {
         init();
     }
 
-    private void init() {
+    private void init(){
         setClipToPadding(false);
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 
+
+    /**
+     * @param childCount
+     * @param n
+     * @return 第n个位置的child 的绘制索引
+     */
     @Override
-    protected int getChildDrawingOrder(int childCount, int i) {
-        if (i == 0 && childIndex.size() != childCount) {
+    protected int getChildDrawingOrder(int childCount, int n) {
+        if (n == 0 || childIndex.size() != childCount) {
             childCenterXAbs.clear();
             childIndex.clear();
             int viewCenterX = getViewCenterX(this);
-            for (int i1 = 0; i1 < childCount; i1++) {
-                int indexAbs = Math.abs(viewCenterX - getViewCenterX(getChildAt(i1)));
-                //两个距离相同，后来的那个做自增，从而保持abs 不同
-                if(childIndex.get(indexAbs)!=null) ++indexAbs;
+            for (int i = 0; i < childCount; ++i) {
+                int indexAbs = Math.abs(viewCenterX - getViewCenterX(getChildAt(i)));
+                //两个距离相同，后来的那个做自增，从而保持abs不同
+                if (childIndex.get(indexAbs) != null) {
+                    ++indexAbs;
+                }
                 childCenterXAbs.add(indexAbs);
-                childIndex.append(indexAbs,i1);
+                childIndex.append(indexAbs, i);
             }
-            Collections.sort(childCenterXAbs);
+            Collections.sort(childCenterXAbs);//1,0,2  0,1,2
         }
-        //哪个Item距离中心点远一些，就先Draw它。（最近的就是中间放大的Item，最后draw）
-        return childIndex.get(childCenterXAbs.get(childCount-1-i));
+        //那个item距离中心点远一些，就先draw它。（最近的就是中间放大的item,最后draw）
+        return childIndex.get(childCenterXAbs.get(childCount - 1 - n));
     }
 
     private int getViewCenterX(View view) {
         int[] array = new int[2];
         view.getLocationOnScreen(array);
-        return array[0] / view.getWidth() / 2;
+        return array[0] + view.getWidth() / 2;
     }
 }

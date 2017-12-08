@@ -32,7 +32,7 @@
             <enum name="right" value="2"/>
         </attr>
 
-        <attr name="midlle_page_cover" format="boolean" />
+        <attr name="middle_page_cover" format="boolean" />
     </declare-styleable>
 
     <style name="MultipleStatusView" />

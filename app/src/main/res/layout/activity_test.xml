@@ -12,7 +12,11 @@
         android:id="@+id/mBannerView"
         android:layout_width="match_parent"
         android:layout_height="180dp"
+        app:open_mz_mode="true"
         app:canLoop="true"
-        app:open_mz_mode="true" />
+        app:middle_page_cover="true"
+        app:indicatorAlign="center"
+        app:indicatorPaddingLeft="10dp"
+        app:indicatorPaddingBottom="50dp" />
 
 </LinearLayout>

@@ -52,7 +52,7 @@
 
     <!--TextView -->
     <style name="TextViewStyle" parent="ViewStyle">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">16px</item>
         <item name="android:textColor">@color/color_666</item>
     </style>
 
@@ -75,6 +75,7 @@
         <item name="android:textColor">@color/color_999</item>
         <item name="android:textSize">20px</item>
     </style>
+
 
     <style name="TextViewStyle_TimeLimit_Text" parent="ViewStyle">
         <item name="android:textColor">@color/color_666</item>

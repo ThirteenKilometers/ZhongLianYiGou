@@ -21,6 +21,7 @@ public class BannerItemView implements ItemViewDelegate<HomePageBeans> {
         @Override
         public boolean isForViewType(HomePageBeans item, int position) {
             return item.getItemType()== HomePageViewModel.ViewType.Banner.getType();
+
         }
 
         @Override

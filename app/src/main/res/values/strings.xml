@@ -12,5 +12,8 @@
     <string name="string_time_limit">限时秒杀</string>
     <string name="string_recommend">爆款推荐</string>
     <string name="string_new">新品预售</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_test">TestActivity</string>
 </resources>

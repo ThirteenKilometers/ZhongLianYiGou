@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import io.reactivex.functions.Consumer;
+
 /**
  * <br/>
  * 作者：LZHS<br/>
@@ -36,15 +38,19 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
     @Override
     public void onCreateView() {
         mBinding.mMultipleStatusView.showLoading();
-        mModel.getDatas().subscribe(aLong -> {
-            mBinding.mMultipleStatusView.showContent();
-            MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
-            mAdapter.addItemViewDelegate(new BannerItemView());
-            mAdapter.addItemViewDelegate(new PromotionItemView());
-            mAdapter.addItemViewDelegate(new DesenoItemView());
-            mAdapter.addItemViewDelegate(new RecommendItemView());
-            mBinding.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-            mBinding.mRecyclerView.setAdapter(mAdapter);
+        mModel.getDatas().subscribe(new Consumer<Long>() {
+            @Override
+            public void accept(Long aLong) throws Exception {
+
+                mBinding.mMultipleStatusView.showContent();
+                MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
+                mAdapter.addItemViewDelegate(new BannerItemView());
+                mAdapter.addItemViewDelegate(new PromotionItemView());
+                mAdapter.addItemViewDelegate(new DesenoItemView());
+                mAdapter.addItemViewDelegate(new RecommendItemView());
+                mBinding.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+                mBinding.mRecyclerView.setAdapter(mAdapter);
+            }
         });
 
 
@@ -54,7 +60,7 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
 
     List<HomePageBeans> getDatas() {
         List<HomePageBeans> mDatas = new ArrayList<>();
-        mDatas.add(new HomePageBeans<String[]>(0, new String[]{}));
+        mDatas.add(new HomePageBeans<String[]>(0,null));
         mDatas.add(new HomePageBeans<HashMap<String, Object>>(1, new HashMap<>()));
         mDatas.add(new HomePageBeans<Object>(2, new Object()));
         mDatas.add(new HomePageBeans<Object>(3, new Object()));

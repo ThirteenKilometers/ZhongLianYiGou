@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--公用部分：商家推荐子item-->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="220px"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/mIVMerchantIcon"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@mipmap/duihuan" />
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mTvMerchantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#333333"
+                android:textSize="32px"
+                android:text="成都印象.小场合农家土菜（环球中心店)" />
+            <TextView
+                android:id="@+id/MerchantAppraise"
+                android:gravity="center_vertical"
+                android:text="我是小星星"
+                android:layout_marginTop="17px"
+                android:textSize="17px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_marginTop="30px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mTvMerchantProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="23px"
+                    android:text="川菜/湘菜" />
+
+                <TextView
+                    android:id="@+id/mTvMerchantDistance"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textSize="23px"
+                    android:text="环球中心985m" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+

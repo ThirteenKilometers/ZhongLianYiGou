@@ -238,16 +238,16 @@ public class ClassificationFragment extends BaseFragment {
 
 
             //图片和大分类下类型名称和小圆点
-            LinearLayout mlin=new LinearLayout(getActivity());
+            LinearLayout mlin=new LinearLayout(getContext());
             mlin.setOrientation(LinearLayout.HORIZONTAL);
             mlin.setGravity(Gravity.CENTER_VERTICAL);
 
-            ImageView img_title=new ImageView(getActivity());
+            ImageView img_title=new ImageView(getContext());
 
             img_title.setImageResource(R.mipmap.ic_launcher);
             mlin.addView(img_title,title_icon);
 
-            TextView tv_title = new TextView(getActivity());
+            TextView tv_title = new TextView(getContext());
             tv_title.setTextColor(Color.GRAY);
             tv_title.setTextSize(16);
             tv_title.setText("中外名酒");
@@ -255,7 +255,7 @@ public class ClassificationFragment extends BaseFragment {
 
             llayout_main.addView(mlin);
 
-            GridView gridView = new GridView(getActivity());
+            GridView gridView = new GridView(getContext());
             gridView.setNumColumns(3);
             gridView.setVerticalSpacing(8);
             gridView.setLayoutParams(content_gradeview);

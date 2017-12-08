@@ -16,6 +16,7 @@ import com.mitime.R;
 import com.mitime.databinding.ActivityMenuBinding;
 import com.mitime.modules.menu.classify.ClassificationFragment;
 import com.mitime.modules.menu.main.MainFragment;
+import com.mitime.modules.menu.merchant.MerchantFragment;
 import com.mitime.mvvm.menu.MenuViewModel;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class MenuActivity extends BaseActivity <MenuViewModel>{
             {
                 fragments.add(MainFragment.newInstance());
                 fragments.add(new ClassificationFragment());
-                fragments.add(CommFragment.newInstance("商家"));
+                fragments.add(new MerchantFragment());//商家
                 fragments.add(CommFragment.newInstance("购物车"));
                 fragments.add(CommFragment.newInstance("我的"));
             }

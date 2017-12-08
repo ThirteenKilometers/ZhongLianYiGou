@@ -11,14 +11,7 @@
         <meta-data
             android:name="design_height"
             android:value="1334" />
-        <!--该应用入口页面-->
-        <activity android:name=".TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

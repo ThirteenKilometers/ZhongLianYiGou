@@ -11,6 +11,30 @@
     </declare-styleable>
 
 
+    <!--自定义Banner 属性-->
+    <declare-styleable name="BannerView">
+        <!--是否开启视觉差Banner效果-->
+        <attr name="open_mz_mode" format="boolean"/>
+        <!--是否开启轮播-->
+        <attr name="canLoop" format="boolean"/>
+        <!--指示器左边距-->
+        <attr name="indicatorPaddingLeft" format="dimension"/>
+        <!--指示器右边距-->
+        <attr name="indicatorPaddingRight" format="dimension"/>
+        <!--指示器上边距-->
+        <attr name="indicatorPaddingTop" format="dimension"/>
+        <!--指示器下边距-->
+        <attr name="indicatorPaddingBottom" format="dimension"/>
+        <!--指示器的位置-->
+        <attr name="indicatorAlign">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+
+        <attr name="midlle_page_cover" format="boolean" />
+    </declare-styleable>
+
     <style name="MultipleStatusView" />
     <style name="MultipleStatusView.TextView">
         <item name="android:layout_width">wrap_content</item>

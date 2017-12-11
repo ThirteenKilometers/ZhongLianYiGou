@@ -1,6 +1,7 @@
 package com.mitime.modules.menu.merchant;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,9 +37,9 @@ public class MerchantFragment extends BaseFragment {
 
     Unbinder unbinder;
     CommonAdapter adapter = null;
-    HeaderAndFooterWrapper  mHeaderAndFooterWrapper;
+    HeaderAndFooterWrapper mHeaderAndFooterWrapper;
     // MultiItemTypeAdapter
-   List<Integer> data = new ArrayList<Integer>();
+    List<Integer> data = new ArrayList<Integer>();
     @BindView(R.id.mRecycleMerchant)
     RecyclerView mRecycleMerchant;
 
@@ -53,28 +54,40 @@ public class MerchantFragment extends BaseFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_merchant, container, false);
         unbinder = ButterKnife.bind(this, view);
-        //initView();
+        initView();
         return view;
     }
 
     private void initView() {
-       // mRecycleMerchant.setLayoutManager(new GridLayoutManager(getContext(), 4));
-       for (int i = 0; i < 8; i++) {
+        // mRecycleMerchant.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        for (int i = 0; i < 8; i++) {
             data.add(i);
         }
-    adapter=new CommonAdapter(getContext(), R.layout.merchant_commomitem_layout,data) {
-        @Override
-        protected void convert(ViewHolder holder, Object o, int position) {
+        adapter = new CommonAdapter(getContext(), R.layout.merchant_commomitem_layout, data) {
+            @Override
+            protected void convert(ViewHolder holder, Object o, int position) {
 
-        }
-    };
-        mHeaderAndFooterWrapper=new HeaderAndFooterWrapper(adapter);
-        TextView t1 = new TextView(getContext());
-        t1.setText("Header 1");
-        mHeaderAndFooterWrapper.addHeaderView(t1);
+            }
+        };
+        initHeadAndFooter();
         mRecycleMerchant.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecycleMerchant.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        mRecycleMerchant.setAdapter(mHeaderAndFooterWrapper);
+        mHeaderAndFooterWrapper.notifyDataSetChanged();
+    }
+
+    private void initHeadAndFooter() {
+      mHeaderAndFooterWrapper = new HeaderAndFooterWrapper(adapter);//classification_item
+        View view=LayoutInflater.from(getContext()).inflate(R.layout.classification,null);
+        RecyclerView mRecycleClassification=view.findViewById(R.id.mRecycleClassification);
+        mRecycleClassification.setLayoutManager(new GridLayoutManager(getContext(),4));
+        mRecycleClassification.setAdapter(new CommonAdapter(getContext(),R.layout.classification_item,data) {
+            @Override
+            protected void convert(ViewHolder holder, Object o, int position) {
+
+            }
+
+        });
+        mHeaderAndFooterWrapper.addHeaderView(view);
     }
 
 

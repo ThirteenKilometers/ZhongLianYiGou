@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--公用部分：商家推荐子item-->
-    <LinearLayout
+    <com.zhy.autolayout.AutoLinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="220px"
@@ -63,5 +63,5 @@
 
 
         </LinearLayout>
-    </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
 

@@ -120,6 +120,7 @@ public class MenuViewModel extends ViewModel {
         mBinding.mInclude.mTextShoppingCart.setTextColor(ContextCompat.getColor(mContext, R.color.color_666));
         mBinding.mInclude.mTexteMe.setTextColor(ContextCompat.getColor(mContext, R.color.color_666));
     }
+
     @Subscribe
     public void onMessageEvent(MenuMessage event) {
         mBinding.mInclude.mImageShowMsg.setVisibility(View.VISIBLE);

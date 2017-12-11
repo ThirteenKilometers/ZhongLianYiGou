@@ -48,7 +48,7 @@ public class BannerItemView implements ItemViewDelegate<HomePageBeans> {
     @Override
     public void convert(ViewHolder holder, HomePageBeans homePageBeans, int position) {
         AutoUtils.auto(holder.getConvertView());
-        mBannerView = holder.getConvertView().findViewById(R.id.mBannerView);
+        mBannerView = holder.getView(R.id.mBannerView);
         mBannerView.setPages(banners, () -> new BannerViewHolders());
         mBannerView.setBannerPageClickListener((view, position1) -> ToastUtil.INSTANCE.show(holder.getConvertView().getContext(), "你单击了第 " + position1 + "张Banner"));
 
@@ -70,7 +70,6 @@ public class BannerItemView implements ItemViewDelegate<HomePageBeans> {
             mImageView.setImageResource(data);
         }
     }
-
 
 
     public void onPause() {

@@ -51,8 +51,8 @@ public class ClassificationFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_classification, container, false);
-        VerticalViewPager verticalViewPager= view.findViewById(R.id.verticalviewpager);
+        View view = inflater.inflate(R.layout.fragment_classification, container, false);
+        VerticalViewPager verticalViewPager = view.findViewById(R.id.verticalviewpager);
         VerticalTabLayout tablayout = view.findViewById(R.id.tablayout);
         tablayout.setTabAdapter(new MyTabAdapter());
         tablayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
@@ -87,6 +87,7 @@ public class ClassificationFragment extends BaseFragment {
                 getDimensionPixelSize(R.dimen.fab_margin));
         return view;
     }
+
     public class ClassificationAdapter extends FragmentPagerAdapter {
         List<SameCategoryFragment> fragments = new ArrayList<>();
 
@@ -134,13 +135,12 @@ public class ClassificationFragment extends BaseFragment {
      * A placeholder fragment containing a simple view.
      */
     public static class SameCategoryFragment extends Fragment {
-        private  ArrayList<String> itemList=null;//图文混排中的文字
+        private ArrayList<String> itemList = null;//图文混排中的文字
         private LinearLayout.LayoutParams content_gradeview = null;
         private LinearLayout.LayoutParams title_tv = null;
-        private  LinearLayout.LayoutParams title_icon=null;
+        private LinearLayout.LayoutParams title_icon = null;
         private LinearLayout llayout_main = null;//ScollerView 的linearlayout布局
         GDAdapter adapter;
-
 
 
         /**
@@ -173,7 +173,7 @@ public class ClassificationFragment extends BaseFragment {
                     + getArguments().getInt(ARG_SECTION_NUMBER));
 
             // TODO: 2017/12/5   模拟数据
-            for (int i=0;i<4;i++){
+            for (int i = 0; i < 4; i++) {
                 setData();
             }
             /* 对 对应的Tablayout进行响应
@@ -204,54 +204,52 @@ public class ClassificationFragment extends BaseFragment {
         @TargetApi(Build.VERSION_CODES.M)
         private void setData() {
 
-            if (itemList==null){
-                itemList=new ArrayList<>();
+            if (itemList == null) {
+                itemList = new ArrayList<>();
                 for (int i = 1; i < 11; i++) {
-                    itemList.add("选项"+i);
+                    itemList.add("选项" + i);
                 }
             }
 
             //高度60dp+行距8dp = 68dp
-            int heightUnit = (int)TypedValue
+            int heightUnit = (int) TypedValue
                     .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 68, getResources().getDisplayMetrics());
             int height;
 
             //计算Gridview总高度
-            if(itemList.size() % 3 == 0)
-            {
-                height = (itemList.size()/3 + 2)*heightUnit;
-            }
-            else{
-                height = (itemList.size()/3 + 1)*heightUnit;
+            if (itemList.size() % 3 == 0) {
+                height = (itemList.size() / 3 + 2) * heightUnit;
+            } else {
+                height = (itemList.size() / 3 + 1) * heightUnit;
             }
 
-            if(content_gradeview == null)
+            if (content_gradeview == null)
                 content_gradeview = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
 
-            if(title_tv == null)
+            if (title_tv == null)
                 title_tv = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT
-                        ,ViewGroup.LayoutParams.WRAP_CONTENT);
-            if (title_icon==null){
-                title_icon=new LinearLayout.LayoutParams(10,10);
-                title_icon.setMargins(20,0,10,0);
+                        , ViewGroup.LayoutParams.WRAP_CONTENT);
+            if (title_icon == null) {
+                title_icon = new LinearLayout.LayoutParams(10, 10);
+                title_icon.setMargins(20, 0, 10, 0);
             }
 
 
             //图片和大分类下类型名称和小圆点
-            LinearLayout mlin=new LinearLayout(getContext());
+            LinearLayout mlin = new LinearLayout(getContext());
             mlin.setOrientation(LinearLayout.HORIZONTAL);
             mlin.setGravity(Gravity.CENTER_VERTICAL);
 
-            ImageView img_title=new ImageView(getContext());
+            ImageView img_title = new ImageView(getContext());
 
             img_title.setImageResource(R.mipmap.ic_launcher);
-            mlin.addView(img_title,title_icon);
+            mlin.addView(img_title, title_icon);
 
             TextView tv_title = new TextView(getContext());
             tv_title.setTextColor(Color.GRAY);
             tv_title.setTextSize(16);
             tv_title.setText("中外名酒");
-            mlin.addView(tv_title,title_tv);
+            mlin.addView(tv_title, title_tv);
 
             llayout_main.addView(mlin);
 
@@ -260,15 +258,16 @@ public class ClassificationFragment extends BaseFragment {
             gridView.setVerticalSpacing(8);
             gridView.setLayoutParams(content_gradeview);
 
-            adapter=new GDAdapter(getActivity(),itemList,R.mipmap.ic_launcher);
+            adapter = new GDAdapter(getActivity(), itemList, R.mipmap.ic_launcher);
             gridView.setAdapter(adapter);
             llayout_main.addView(gridView);
         }
     }
+
     /**
      * 右侧Adaptert
      */
-    static  class  GDAdapter extends BaseAdapter{
+    static class GDAdapter extends BaseAdapter {
         private Context context;
         private List<String> results;
         private int imageId;
@@ -297,13 +296,13 @@ public class ClassificationFragment extends BaseFragment {
 
         @Override
         public View getView(int i, View convertView, ViewGroup viewGroup) {
-            String c= (String) getItem(i);
-            if (convertView==null){
-                holder=new ViewHolder();
-                convertView=LayoutInflater.from(context).inflate(R.layout.jd_item,null);
+            String c = (String) getItem(i);
+            if (convertView == null) {
+                holder = new ViewHolder();
+                convertView = LayoutInflater.from(context).inflate(R.layout.jd_item, null);
                 holder.tv = (TextView) convertView.findViewById(R.id.tv_jd_item);
                 holder.imv = (ImageView) convertView.findViewById(R.id.imv_jd_item);
-            }else{
+            } else {
                 holder = (ViewHolder) convertView.getTag();
             }
             convertView.setTag(holder);
@@ -312,11 +311,12 @@ public class ClassificationFragment extends BaseFragment {
             return convertView;
         }
 
-        class ViewHolder{
+        class ViewHolder {
             TextView tv;
             ImageView imv;
         }
     }
+
     /**
      * 左侧Adapter
      */
@@ -327,7 +327,7 @@ public class ClassificationFragment extends BaseFragment {
 
         {
             titles = new ArrayList<>();
-            Collections.addAll(titles, "酒类", "数码", "厨具", "家用电器", "玩具乐器","礼品箱包","食品饮料","电脑办公","医疗保健","家装建材","汽车用品","美妆个护","家纺家居","家居","户外运动","手机","母婴"
+            Collections.addAll(titles, "酒类", "数码", "厨具", "家用电器", "玩具乐器", "礼品箱包", "食品饮料", "电脑办公", "医疗保健", "家装建材", "汽车用品", "美妆个护", "家纺家居", "家居", "户外运动", "手机", "母婴"
             );
         }
 

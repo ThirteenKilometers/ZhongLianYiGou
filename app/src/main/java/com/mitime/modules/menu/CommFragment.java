@@ -19,9 +19,9 @@ import com.mitime.databinding.FragmentCommBinding;
  */
 public class CommFragment extends BaseFragment {
 
-    FragmentCommBinding mBinding ;
+    FragmentCommBinding mBinding;
 
-    public static CommFragment newInstance(String title){
+    public static CommFragment newInstance(String title) {
         CommFragment fragment = new CommFragment();
         Bundle args = new Bundle();
         args.putString("title", title);
@@ -32,7 +32,7 @@ public class CommFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mBinding= DataBindingUtil.inflate(inflater, R.layout.fragment_comm,container,false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_comm, container, false);
         mBinding.setTitle(getArguments().getString("title"));
         return mBinding.getRoot();
     }

@@ -18,7 +18,7 @@ class MerchantsRecommendActivity implements com.zhy.adapter.recyclerview.base.It
 
     @Override
     public boolean isForViewType(HomePageBeans item, int position) {
-        return item.getItemType()==1;
+        return item.getItemType() == 1;
     }
 
     @Override

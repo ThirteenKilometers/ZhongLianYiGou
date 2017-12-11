@@ -17,7 +17,7 @@ import com.zhy.autolayout.utils.AutoUtils;
  * 时间： 2017/12/4 21:35<br/>
  * 邮箱：1050629507@qq.com
  */
-public class PromotionItemView implements ItemViewDelegate<HomePageBeans> {
+public class PromotionItemView implements ItemViewDelegate<HomePageBeans<String>> {
     @Override
     public int getItemViewLayoutId() {
         return R.layout.item_promotion_layout;
@@ -29,9 +29,11 @@ public class PromotionItemView implements ItemViewDelegate<HomePageBeans> {
     }
 
     @Override
-    public void convert(ViewHolder holder, HomePageBeans homePageBeans, int position) {
+    public void convert(ViewHolder holder, HomePageBeans item, int position) {
         AutoUtils.auto(holder.getConvertView());
         OnClickListener clickListener = new OnClickListener();
+
+
         holder.setOnClickListener(R.id.mViewMore, clickListener);
         holder.setOnClickListener(R.id.mViewSeckill, clickListener);
         holder.setOnClickListener(R.id.mViewExchange, clickListener);

@@ -28,9 +28,10 @@ import java.util.List;
  * 时间： 2017/11/27 16:11<br/>
  * 邮箱：1050629507@qq.com
  */
-public class MenuActivity extends BaseActivity <MenuViewModel>{
+public class MenuActivity extends BaseActivity<MenuViewModel> {
     ActivityMenuBinding mBinding;
     List<BaseFragment> fragments = new ArrayList<>();
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,7 @@ public class MenuActivity extends BaseActivity <MenuViewModel>{
                 fragments.add(CommFragment.newInstance("购物车"));
                 fragments.add(CommFragment.newInstance("我的"));
             }
+
             @Override
             public Fragment getItem(int position) {
                 return fragments.get(position);
@@ -73,12 +75,14 @@ public class MenuActivity extends BaseActivity <MenuViewModel>{
         mBinding.mViewPager.setPageTransformer(true, new DepthPageTransformer());
         mBinding.mViewPager.setOffscreenPageLimit(fragments.size());
     }
+
     private long firstTime = 0l;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         long secondTime = System.currentTimeMillis();
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if ( secondTime - firstTime < 1000) {
+            if (secondTime - firstTime < 1000) {
                 System.exit(0);
             } else {
                 ToastUtil.INSTANCE.show(this, "再按一次退出程序");

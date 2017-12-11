@@ -7,7 +7,7 @@ package com.mitime.mvvm.beans;
  * 邮箱：1050629507@qq.com
  */
 public class PromotionBean {
-    int id=-1;
+    int id = -1;
     String name;
     String imageUrl;
     int imageRes;

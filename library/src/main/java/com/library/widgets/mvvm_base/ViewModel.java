@@ -12,6 +12,8 @@ import com.library.widgets.ui_base.BaseFragment;
  * 邮箱：1050629507@qq.com
  */
 public abstract class ViewModel<M extends Model> implements BaseActivity.ActivityFlow {
+
+
     public Context mContext;
 
     public M mModel;

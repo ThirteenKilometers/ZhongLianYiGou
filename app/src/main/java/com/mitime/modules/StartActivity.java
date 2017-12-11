@@ -32,7 +32,7 @@ public class StartActivity extends BaseActivity {
 
     @Override
     protected void setStatusBar() {
-        StatusBarUtil.setTranslucentForImageView(this,null);
+        StatusBarUtil.setTranslucentForImageView(this, null);
     }
 
     private void initViews() {

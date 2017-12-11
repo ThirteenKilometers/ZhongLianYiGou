@@ -34,9 +34,10 @@ public class MainViewModel extends ViewModel {
 
     }
 
-    public  Command getCommand(){
+    public Command getCommand() {
         return new Command();
     }
+
     @Subscribe
     public void onMessageEvent(MenuMessage event) {
         mBinding.mInclude.mImageShowMsg.setVisibility(View.VISIBLE);
@@ -46,20 +47,20 @@ public class MainViewModel extends ViewModel {
         this.mBinding = binding;
     }
 
-    public  class Command {
+    public class Command {
         public void onClickRichScan(View view) {
             //单击了扫一扫
-            ToastUtil.INSTANCE.show(mContext,"单击了扫一扫");
+            ToastUtil.INSTANCE.show(mContext, "单击了扫一扫");
         }
 
         public void onClickSearch(View view) {
             //单击了搜索
-            ToastUtil.INSTANCE.show(mContext,"单击了搜索");
+            ToastUtil.INSTANCE.show(mContext, "单击了搜索");
         }
 
         public void onClickMessage(View view) {
             //单击了消息
-            ToastUtil.INSTANCE.show(mContext,"单击了消息");
+            ToastUtil.INSTANCE.show(mContext, "单击了消息");
         }
     }
 }

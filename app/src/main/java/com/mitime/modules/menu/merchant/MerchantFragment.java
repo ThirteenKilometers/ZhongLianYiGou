@@ -55,11 +55,11 @@ public class MerchantFragment extends BaseFragment {
     }
 
     private void initView() {
-       // mRecycleMerchant.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        // mRecycleMerchant.setLayoutManager(new GridLayoutManager(getContext(), 4));
        /* for (int i = 0; i < 8; i++) {
             data.add(i);
         }*/
-        adapter = new MultiItemTypeAdapter(getContext(),getDatas());
+        adapter = new MultiItemTypeAdapter(getContext(), getDatas());
         adapter.addItemViewDelegate(new MerchantsClassificationActivity());
         adapter.addItemViewDelegate(new MerchantsRecommendActivity());
 
@@ -70,7 +70,7 @@ public class MerchantFragment extends BaseFragment {
 
     List<HomePageBeans> getDatas() {
         List<HomePageBeans> mDatas = new ArrayList<>();
-        mDatas.add(new HomePageBeans<Object>(0,null));
+        mDatas.add(new HomePageBeans<Object>(0, null));
         mDatas.add(new HomePageBeans<Object>(1, new Object()));
         mDatas.add(new HomePageBeans<Object>(1, new Object()));
         mDatas.add(new HomePageBeans<Object>(1, new Object()));

@@ -6,9 +6,9 @@ package com.mitime.mvvm.beans;
  * 时间： 2017/12/4 22:19<br/>
  * 邮箱：1050629507@qq.com
  */
-public class HomePageBeans<T > {
+public class HomePageBeans<T> {
 
-    int mItemType=-1;
+    int mItemType = -1;
 
     T mItemDatas;
 

@@ -32,9 +32,9 @@ public class HomePageModel extends Model {
     }
 
     public Observable<Long> getDatas() {
-       return   Observable.timer(4, TimeUnit.SECONDS)
-               .subscribeOn(Schedulers.io())
-               .unsubscribeOn(Schedulers.io())
-               .observeOn(AndroidSchedulers.mainThread());
+        return Observable.timer(4, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

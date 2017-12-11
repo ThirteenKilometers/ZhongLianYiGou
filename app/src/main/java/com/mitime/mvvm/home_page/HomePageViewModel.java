@@ -1,8 +1,12 @@
 package com.mitime.mvvm.home_page;
 
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 
 import com.library.widgets.mvvm_base.ViewModel;
+import com.mitime.R;
 import com.mitime.databinding.FragmentHomePageBinding;
 import com.mitime.modules.menu.comm_sub.item_view.BannerItemView;
 import com.mitime.modules.menu.comm_sub.item_view.DesenoItemView;
@@ -12,7 +16,6 @@ import com.mitime.mvvm.beans.HomePageBeans;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -41,6 +44,15 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
 
             mBinding.mMultipleStatusView.showContent();
             MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
+
+
+            android.view.View mRoot = LayoutInflater.from(mContext).inflate(R.layout.activity_menu, null, false);
+
+
+            RecyclerView mRecyclerView = mRoot.findViewById(R.id.mRecyclerView);
+            mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 4));
+
+
             mAdapter.addItemViewDelegate(mBannerItemView);
             mAdapter.addItemViewDelegate(new PromotionItemView());
             mAdapter.addItemViewDelegate(new DesenoItemView());
@@ -59,13 +71,16 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
 
     List<HomePageBeans> getDatas() {
         List<HomePageBeans> mDatas = new ArrayList<>();
-        mDatas.add(new HomePageBeans<String[]>(0, null));
-        mDatas.add(new HomePageBeans<HashMap<String, Object>>(1, new HashMap<>()));
-        mDatas.add(new HomePageBeans<Object>(2, new Object()));
-        mDatas.add(new HomePageBeans<Object>(3, new Object()));
-        mDatas.add(new HomePageBeans<Object>(3, new Object()));
-        mDatas.add(new HomePageBeans<Object>(3, new Object()));
-        mDatas.add(new HomePageBeans<Object>(3, new Object()));
+        mDatas.add(new HomePageBeans<String[]>(ViewType.Banner.getType(), null));
+
+        mDatas.add(new HomePageBeans<String>(ViewType.Promotion.getType(), ""));
+
+        mDatas.add(new HomePageBeans<Object>(ViewType.Deseno.getType(), new Object()));
+
+        mDatas.add(new HomePageBeans<Object>(ViewType.Recommend.getType(), new Object()));
+        mDatas.add(new HomePageBeans<Object>(ViewType.Recommend.getType(), new Object()));
+        mDatas.add(new HomePageBeans<Object>(ViewType.Recommend.getType(), new Object()));
+        mDatas.add(new HomePageBeans<Object>(ViewType.Recommend.getType(), new Object()));
         return mDatas;
     }
 

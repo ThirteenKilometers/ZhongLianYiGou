@@ -11,7 +11,6 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 public class MerchantsClassificationActivity implements ItemViewDelegate<HomePageBeans> {
 
 
-
     @Override
     public int getItemViewLayoutId() {
         return R.layout.classification_item;
@@ -19,7 +18,7 @@ public class MerchantsClassificationActivity implements ItemViewDelegate<HomePag
 
     @Override
     public boolean isForViewType(HomePageBeans item, int position) {
-        return  item.getItemType()==0;
+        return item.getItemType() == 0;
     }
 
     @Override

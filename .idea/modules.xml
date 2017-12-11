@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TestDemo/TestDemo.iml" filepath="$PROJECT_DIR$/TestDemo/TestDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZhongLianYiGou.iml" filepath="$PROJECT_DIR$/ZhongLianYiGou.iml" />
+      <module fileurl="file://E:\ZhongLianYiGou\ZhongLianYiGou.iml" filepath="E:\ZhongLianYiGou\ZhongLianYiGou.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\ZhongLianYiGou\app\app.iml" filepath="E:\ZhongLianYiGou\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://E:\ZhongLianYiGou\library\library.iml" filepath="E:\ZhongLianYiGou\library\library.iml" />
     </modules>
   </component>
 </project>

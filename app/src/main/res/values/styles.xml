@@ -102,6 +102,19 @@
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/draw_purchase</item>
     </style>
+    <!--输入框属性-->
+    <style name="EditTextStyle" parent="ViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColorHint">@color/color_ccc</item>
+        <item name="android:textSize">24px</item>
+        <item name="android:textCursorDrawable">@drawable/draw_edit_cursor</item>
+        <item name="android:background">#00ffffff</item>
+        <item name="android:textColor">@color/color_333</item>
+        <!--<item name="android:background">@color/editextviewBackground</item>-->
+
+    </style>
     <!--分割线-->
     <style name="PartingLineView">
         <item name="android:layout_width">match_parent</item>
@@ -127,4 +140,5 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

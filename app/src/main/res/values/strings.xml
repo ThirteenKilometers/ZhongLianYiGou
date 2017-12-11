@@ -16,4 +16,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="string_regist">注册</string>
+    <string name="app_name_explain">让消费创造价值</string>
+    <string name="string_input_phone_hint">请输入手机号</string>
 </resources>

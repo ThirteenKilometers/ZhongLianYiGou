@@ -1,7 +1,6 @@
 package com.mitime.modules.menu.merchant;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,18 +8,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 
 import com.library.widgets.ui_base.BaseFragment;
 import com.mitime.R;
-import com.mitime.mvvm.beans.HomePageBeans;
 import com.zhy.adapter.recyclerview.CommonAdapter;
-import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 import com.zhy.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -66,6 +63,7 @@ public class MerchantFragment extends BaseFragment {
         adapter = new CommonAdapter(getContext(), R.layout.merchant_commomitem_layout, data) {
             @Override
             protected void convert(ViewHolder holder, Object o, int position) {
+                AutoUtils.auto(holder.getConvertView());
 
             }
         };
@@ -77,17 +75,25 @@ public class MerchantFragment extends BaseFragment {
 
     private void initHeadAndFooter() {
       mHeaderAndFooterWrapper = new HeaderAndFooterWrapper(adapter);//classification_item
-        View view=LayoutInflater.from(getContext()).inflate(R.layout.classification,null);
+
+        FrameLayout mRoot=new FrameLayout(getContext());
+        mRoot.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        View view=LayoutInflater.from(getContext()).inflate(R.layout.classification,mRoot,false);
+
         RecyclerView mRecycleClassification=view.findViewById(R.id.mRecycleClassification);
         mRecycleClassification.setLayoutManager(new GridLayoutManager(getContext(),4));
         mRecycleClassification.setAdapter(new CommonAdapter(getContext(),R.layout.classification_item,data) {
             @Override
             protected void convert(ViewHolder holder, Object o, int position) {
+                AutoUtils.auto(holder.getConvertView());
 
             }
 
         });
-        mHeaderAndFooterWrapper.addHeaderView(view);
+        mRoot.addView(view);
+        mHeaderAndFooterWrapper.addHeaderView(mRoot);
     }
 
 

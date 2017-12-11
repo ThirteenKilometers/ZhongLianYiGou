@@ -30,10 +30,6 @@ public class StartActivity extends BaseActivity {
         initViews();
     }
 
-    @Override
-    protected void setStatusBar() {
-        StatusBarUtil.setTranslucentForImageView(this, null);
-    }
 
     private void initViews() {
         Observable.timer(3, TimeUnit.SECONDS)

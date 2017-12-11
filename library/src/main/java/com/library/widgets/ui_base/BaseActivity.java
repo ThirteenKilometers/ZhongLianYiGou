@@ -1,15 +1,11 @@
 package com.library.widgets.ui_base;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.library.R;
 import com.library.utils.StatusBarUtil;
 import com.library.widgets.mvvm_base.ViewModel;
 import com.zhy.autolayout.AutoLayoutActivity;
-
-import org.greenrobot.eventbus.EventBus;
 
 /**
  * 该类为该应用所有Activity的基类<br/>
@@ -39,8 +35,7 @@ public abstract class BaseActivity<VM extends ViewModel> extends AutoLayoutActiv
     }
 
     protected void setStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorAccent), Color.TRANSPARENT);
-    }
+        StatusBarUtil.setTranslucentForImageView(this, null);  }
 
     @Override
     public void onStart() {

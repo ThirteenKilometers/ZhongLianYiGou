@@ -41,18 +41,8 @@ public class HomePageViewModel extends ViewModel<HomePageModel> {
     public void onCreateView() {
         mBinding.mMultipleStatusView.showLoading();
         mModel.getDatas().subscribe(aLong -> {
-
             mBinding.mMultipleStatusView.showContent();
             MultiItemTypeAdapter mAdapter = new MultiItemTypeAdapter(mContext, getDatas());
-
-
-            android.view.View mRoot = LayoutInflater.from(mContext).inflate(R.layout.activity_menu, null, false);
-
-
-            RecyclerView mRecyclerView = mRoot.findViewById(R.id.mRecyclerView);
-            mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 4));
-
-
             mAdapter.addItemViewDelegate(mBannerItemView);
             mAdapter.addItemViewDelegate(new PromotionItemView());
             mAdapter.addItemViewDelegate(new DesenoItemView());

@@ -2,13 +2,16 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
     android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
+        android:paddingTop="21px"
+        android:paddingBottom="50px"
+        android:background="@android:color/white"
         android:id="@+id/mRecycleClassification"
         android:layout_width="match_parent"
-        android:layout_height="390px" />
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="match_parent"

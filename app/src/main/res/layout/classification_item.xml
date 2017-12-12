@@ -6,8 +6,7 @@
     android:background="@android:color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingBottom="15px"
-    android:paddingTop="15px">
+    android:paddingTop="29px">
 
     <ImageView
         android:layout_width="94px"
@@ -21,5 +20,6 @@
         android:gravity="center"
         android:text="美食餐饮"
         android:textColor="#ff999999"
-        android:textSize="23px" />
+        android:textSize="23px"
+    />
 </com.zhy.autolayout.AutoLinearLayout>

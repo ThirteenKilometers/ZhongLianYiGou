@@ -33,7 +33,9 @@
         <activity
             android:name=".modules.menu.MenuActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".modules.menu.merchant.MerchantsClassificationActivity"></activity>
+ <!--       <activity android:name=".modules.menu.merchant.MerchantsClassificationActivity" />-->
+        <!--商家2级分类-->
+        <activity android:name=".modules.menu.merchant.merchant_two.MerchantTwoActivity"></activity>
     </application>
 
 </manifest>

@@ -2,8 +2,8 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/white"
     android:orientation="vertical">
-
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
             android:layout_height="200px"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@mipmap/duihuan" />
+            android:src="@mipmap/jzsb_xqdt" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,14 +35,15 @@
                 android:textColor="#333333"
                 android:textSize="32px" />
 
-            <TextView
+            <ImageView
+                android:layout_gravity="center_vertical"
                 android:id="@+id/MerchantAppraise"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="17px"
+                android:layout_height="17px"
+                android:scaleType="fitXY"
                 android:layout_marginTop="17px"
-                android:gravity="center_vertical"
-                android:text="我是小星星"
-                android:textSize="17px" />
+                android:src="@mipmap/manxing"
+                 />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -56,6 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="川菜/湘菜"
+                    android:textColor="@color/color_F49524"
                     android:textSize="23px" />
 
                 <TextView
@@ -64,6 +66,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:maxLines="1"
+                    android:textColor="@color/color_999"
+                    android:layout_marginRight="29px"
                     android:text="环球中心985m"
                     android:textSize="23px" />
             </RelativeLayout>
@@ -73,7 +77,8 @@
     </com.zhy.autolayout.AutoLinearLayout>
 
     <View
-        android:background="#000"
+        android:background="@color/color_F2F2F2"
+
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="220px" />
